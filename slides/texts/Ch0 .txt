@@ -1,0 +1,115 @@
+                  QQ群
+课堂派
+      光通信技术 修改班级+真名
+        2025年春季
+
+         杨彦甫
+
+
+
+
+          前言            1
+               课程教材
+教材：Fiber optical Communications
+
+光纤通信
+
+作者：Joseph C. Palais
+
+英文版：Pearson Prentice Hall
+
+中文版：电子工业出版社
+
+
+
+
+                                  2
+                            序言
+ 重要参考书！！！推荐交叉对照学习
+ Title: Fiber-Optic Communication systems
+
+    •Author: Govind P. Agrawal
+
+    •E-book available for UTSZ（最新第五版英文）
+
+
+
+
+ 五颗星                四颗星                     四颗星      三颗星
+第四版翻译版             第五版英文                    中文版本   科普，跨专业必读
+                                                        3
+                   序言
+Reference Book（相干光通信系统建模+DSP：
+产业界最新技术）
+ •Title: Digital Coherent Optical Systems
+ Architecture and Algorithms
+
+ •Author: Darli Augusto de Arruda Mello Fabio
+ Aparecido Barbosa
+
+ •Publisher: Springer
+
+ •E-book available for UTSZ
+                                                4
+           序言
+扫码加入课堂
+ •   课件、作业、提问/答疑、签到、互动
+ •   课前打印胶片，每张纸建议4-6个胶片
+
+
+
+
+                          5
+               课程考核
+•HOMEWORK/Class performance 课后作业/课堂表现
+    15+5=20%
+•EXAMS 期末考试，闭卷
+
+     70%
+•Experiments 实验
+     10%
+•INTERACTION WITH INSTRUCTOR
+    Online-课堂派，QQ群/助教
+
+
+                                    6
+学时安排：课堂 32学时 实验 8学时
+
+绪论：2        调制：4
+
+光学和光波导：2    噪声和检测：4
+
+光纤：2        系统设计：2
+
+光源与光放大器：4   相干系统DSP: 6
+
+光探测器：2
+
+光器件：2
+                         7
+本课程与其他课程关系
+
+电磁场和电磁波：    光      光
+
+工程光学：       通      网
+
+导波光学：       信      络
+
+激光原理：       技      技
+
+光检测技术：      术      术
+器件层面       系统层面   网络层面
+                         8
+本课程与其他课程关系
+
+
+
+
+             9
+课程知识拓扑图
+
+
+
+
+          10
+

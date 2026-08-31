@@ -1,0 +1,2849 @@
+          Chapter 6
+Optical Sources and Amplifiers
+       光源与光放大器
+
+
+              6.1            1
+            OUTLINE 大纲
+6.1 发光二极管（偏置/能级/波长/双异质结）
+
+6.2 LED工作特性（线性区/偏置/带宽(定性) 面发射/边发
+射/调制带宽）
+
+6.3 激光器原理（谐振、纵模、阈值、横模）
+
+6.4 半导体激光器(双异质结)
+
+6.5 半导体激光器工作特性(阈值)
+
+6.6 窄线宽和可调谐半导体激光器（相位噪声模型）
+
+6.7 光放大器（掺铒光纤放大器、光信噪比）
+
+6.8/6.9 光纤放大器/VCSEL 自学
+                  2.1              2
+       Section 6.1
+      发光二极管，LED
+发光二极管是一个半导体PN结，当在PN结上加正向偏置
+电压时会发光。
+
+
+                  LED
+          p                         n
+
+              i
+
+                            V
+                  +             -
+
+                      6.1               3
+             发光二极管
+
+  V = 0 时的能级图(零偏压)
+
+
+Electron      p          n
+Energy
+电子能量              Conduction Band，导带
+                    -------
+         ++++++                Hole
+                      Wg
+  Valence Band，价带              Energy
+                               空穴能量
+
+
+
+                   6.1                  4
+              发光二极管
+V > 0时的能级图 (正偏压)
+
+              P            N
+
+ Electron                 Conduction Band
+ Energy            -------------
+             Wg       ----------
+ Hole
+            ++++++             hf = Wg
+ Energy
+              ++++++
+                         Valence Band
+Wg = bandgap energy，禁带能量
+其值取决于所用半导体.
+
+                   6.1                      5
+                  发光二极管
+所释放能量以光子形式存在
+
+    Wg  hf
+              c
+     Wg = h
+           
+          c
+      =h                                   (6.1)
+          Wg
+Wg 单位为焦耳，  单位为米
+已知：
+
+ 1 eV = 1.6  10-19 J , h = 6.626  10-34 J  s
+                       6.1                          6
+               发光二极管
+假设 Wg 单位为 eV. 则输出波长计算如下：
+
+
+                            −34
+      hc 6.626  10 (3  10 )     8
+   =   =                    −19
+      Wg Wg (eV )  1.6  10
+      1.24  10−6
+   =             m
+       Wg (eV )
+        1.24
+     =                               (6.2)
+         Wg
+Wg 以 eV 为单位  以 m 为单位
+
+                      6.1                     7
+          发光二极管
+半导体发光特性
+
+材料         (m)        Wg (eV)
+GaAs      0.9           1.4
+AlGaAs    0.8 - 0.9     1.4 - 1.55
+InGaAs    1.0 - 1.3     0.95 - 1.24
+InGaAsP   0.9 - 1.7     0.73 - 1.35
+GaInP     0.64 - 0.68   1.82 - 1.94
+
+
+
+
+                6.1                   8
+              发光二极管
+Double Heterojunction structure 双异质结 提升量子效率
+
+
+
+
+兼顾：能级（有源层，电荷约束）+折射率（波导：光约束）
+                    6.1                   9
+             发光二极管
+Surface Emitter         Edge Emitter
+  面发射LED                 边发射LED
+
+
+
+
+                  6.1                  10
+Section 6.2（Skip）
+LED工作特性
+
+    光功率        线性工
+    (mW)                           非线性
+               作区
+           5                       工作区
+
+
+
+           0    100         Input Current (mA)
+
+  反向偏置无输出功率（负向电流）
+
+
+
+                      6.2                        11
+Section 6.2
+LED工作特性
+  理想情况下，光功率随着输入电流线性增加。如上图标
+  记为“线性工作区”的区域所示情况。
+
+
+
+
+              6.2            12
+           LED的工作特性
+证明: 令
+    i = 电流 (Coulombs/second)
+    N = 每秒进入结的电荷数
+则
+
+
+       i    (Coulombs / s)
+    N=
+       e (Coulombs / electron)
+       i
+    N = (electron / s)
+       e
+                     6.2         13
+              LED的工作特性
+
+如果这些电荷的一部分  复合发射光子，则输出功率为：
+
+
+
+                recombinat ions     energy      
+P = ( N )Wg =                                  
+                      s          recombinat ion 
+
+    P =  NWg energy / s
+
+             i
+    P =  Wg                                 (6.3)
+             e
+
+                         6.2                           14
+            LED的工作特性
+若 Wg 以 eV 为单位，则上式简化为
+                      J  i
+      P =  Wg (eV )e    
+                      eV   e
+化简得
+
+      P =  Wg i                   (6.4)
+
+其中 Wg 单位为 eV，P 单位为 W. 因此它们线性相关。
+ 在大电流下会减小, 产生非线性饱和区。
+
+
+
+
+                        6.2                15
+            LED的工作特性
+例: GaAs LED, Wg = 1.4 eV. 若 电流i = 100 mA产生5
+mW的光功率，求转换效率  。
+
+
+解：
+
+     P =  Wg i    0.005 =  (1.4 )(0.1)
+      = 0.036     3.6 %
+
+
+
+                      6.2                     16
+         LED的工作特性
+只有部分发射光被测量并对光纤应用有用，因为从
+其他各个方向出来的光子不能被收集。
+
+
+
+
+              +
+损失的光子
+
+
+
+
+              -
+        LED
+
+                  6.2    17
+             LED的工作特性
+常见参数：
+     工作电压: 1.2 - 2 V
+     工作电流 50 - 100 mA.
+例: V = 2 V, i = 100 mA. 计算输入电功率.
+     电功率P:
+     P = Vi = 2(0.1) = 0.2 W
+     P = 200 mW.
+
+
+
+
+                         6.2       18
+             LED的工作特性
+调制LED (数字)
+                                    输出光功率
+
+
+
+
+               光功率
+                                       1 0 1
+
+
+信号       LED
+                                               t
+     i                          1
+                                0
+                                1
+                     t
+                         输入电流(信号)
+                          6.2                      19
+             LED的工作特性
+调制LED (模拟，偏置电压)
+
+                       i
+     Idc       is
+                                  LED
+
+      Bias Signal
+ 输入(信号电流) :
+     is = Isp sint
+  :调制频率
+ 总电流i：
+     i = Idc + Isp sin t
+                            6.2         20
+ 偏置电压：保证电流工作区域大于零
+             LED的工作特性
+调制LED (模拟)
+                                   Psp
+                                         光功率
+   光功率
+
+                       Pdc
+                                           t
+
+             Idc
+         0                    i
+                        Isp
+
+                   t   I输入电流 (信号)
+
+
+
+                                  6.2          21
+                LED的工作特性
+注意: 需要一个直流偏置电流保证总电流非负
+     i = Idc + Isp sin t
+光功率P：
+     P = a 1i
+其中
+     a1 = dP/di
+为特征曲线的斜率
+
+
+
+
+                            6.2   22
+             LED的工作特性
+随后
+     P = a1 ( I dc + I sp sin  t )
+
+     P = Pdc + Psp sin t
+     Psp → peak signal (optical ) power
+
+     Psp = a1I sp
+     Pdc = a1I dc
+
+                            6.2           23
+             LED的工作特性
+光源调制带宽限制
+光源存在最高调制频率原因如下:
+1) 结电容+寄生电容Junction and parasitic capacitance.
+2) 非零载流子寿命Non-zero carrier lifetimes.
+电荷从注入到复合的平均时间
+
+
+
+
+                       6.2                       24
+         LED的工作特性
+1) 结电容和寄生电容:
+
+电容抗计算如下:
+          1
+    XC =
+          Cd
+其中，调制频率  越大，电容抗越小
+
+
+
+
+                6.2   25
+           LED的工作特性
+二极管结电阻和寄生电容
+
+                            1
+                      XC =
+                            Cd
+      Cd       Rd
+
+
+
+
+ Cd ：结电容 (小)
+ Rd ：结电阻(很大)
+
+                6.2               26
+         LED的工作特性
+2) 非零载流子寿命, .
+ 为注入电荷复合平均时间。由于光子是在复合时产生。
+则部分载流子在电流脉冲产生时快速复合（产生光子）而
+部分载流子则是在同一脉冲下稍后复合（在光脉冲中存在
+延迟）导致脉冲展宽 。
+
+
+
+
+                 6.2         27
+          LED的工作特性
+例: 电调制
+
+                  这里的载流子
+    is            产生光子.
+                            输入电流
+                        t
+    Po
+
+                            输出功率
+             tr         t
+  较大的 会增加脉冲上升时间 tr 。
+  较大的 会展宽脉冲 。
+
+                  6.2              28
+           LED的工作特性
+当使用较低频率的正弦输入进行调制时，输出功率可由
+LED (P - I) 特征曲线来预测.由下式可得，随着调制频率
+ 增大, 光信号功率的峰值会逐渐减小 (对载流子寿命的
+有限响应)。
+
+                   a1I sp
+          Psp =                   (6.7)
+                  1+  2 2
+
+
+
+其中， a1 = dP/di
+ 为载流子寿命
+
+
+                            6.2           29
+                                     LED的工作特性
+    1 2频率下的型号功率图
+                                          Signal Power
+                2
+
+               1.8
+                                1                   Psp1
+               1.6                                       P sp 1        Psp2
+               1.4                   2                                   P sp 2
+               1.2
+ Power Power
+
+
+
+
+                1
+                     P dc
+               0.8
+
+               0.6
+
+               0.4
+
+               0.2
+
+                0
+                     0      2        4    6          8            10      12       14
+                                              time
+
+                                          Time
+    Psp ：交流光功率幅值
+                                              6.2                                       30
+注意：幅频响应，横轴##频率；纵轴##幅度
+                  LED的工作特性
+低调制频率下Psp = a1Isp.
+
+
+            1                              Psp             1
+                   0.707                           =
+  Psp      0.7                            a1I sp       1 + (  )2
+  a1I sp   0.5
+                                                  = 1
+
+            0
+             0.01 0.02 0.05 0.1 0.2 0.5 1 2 5    10        
+当  = 1
+            Psp            1       1
+                   =             =   = 0.707
+            a1I sp   1 + (  )2   2
+                               6.2                                   31
+             LED的工作特性
+检测电路:
+                         V
+         P           -       +
+
+
+                 i                 RL
+
+
+        Photodetector
+
+被检测电流 (i)与光功率 (P)成比例. 且接收器电功率与电
+流平方成正比
+
+
+
+                             6.2        32
+               LED的工作特性
+因此, 当
+                 Psp
+                         = 0.707
+                a1I sp
+
+则接收电流减小到0.707，接收电功率减少到
+(0.707)2 = 0.5(3dB)
+
+
+
+
+                             6.2   33
+         LED的工作特性
+
+LED电带宽：
+
+          1
+     =       = 2 f
+          
+
+                 1            (6.8)
+      f3−dB =
+                2 
+通常LED 电带宽约为1 MHz ~ 100 MHz。
+
+
+
+                       6.2            34
+           LED的工作特性
+通常，我们测量LED上升时间 tr ,而不是带宽
+
+
+                  i           LED
+ 阶跃输
+ 入电流
+       i
+
+                        90%         t
+       P
+ 输出功
+ 率          10%
+                 tr                 t
+   从 10% 到 90% 上升时间如图所示
+                      6.2               35
+        LED的工作特性
+
+电带宽和上升时间关系如下 (近似),
+
+
+                0.35    (6.9)
+        f3−dB =
+                 tr
+
+这一关系对于RC低通滤波器来说非常精确(下一张幻
+灯片)。我们将用它来确定光源、光探测器和光纤的频
+率响应。
+
+
+                  6.2           36
+            LED的工作特性
+ 低通 RC 滤波
+
+                R
+
+        Input                Output
+                       C
+
+
+
+
+tr 通常为几 ns 到 250 ns.
+
+
+
+                       6.2            37
+          LED的工作特性
+LEDs的辐射方向图
+面发光器件辐射方向图为朗伯图样
+
+
+
+              
+
+
+      n
+      p
+
+
+
+
+              6.2    38
+                 LED的工作特性
+  光束强度  cos 
+                光束强度
+
+                                   1.0
+
+                         0.5
+
+                                             
+                               0      90 º
+                                    60º
+  当  = 0 º, cos  = 1
+  当  = 60 º, cos  = 0.5
+  半功率光束全宽度为 120º
+                                   6.2           39
+室内光定位：基于接收光强，测算距离光源的位置
+           LED的工作特性
+例: 不妨令 NA = 0.24
+
+        sin = 0.24   = 13.9
+接收角为 2 = 28 因此大部分辐射波(超过120°)不会
+耦合入光纤。
+
+               光源辐射角
+
+
+               光纤接收角
+
+
+
+                    6.2            40
+          LED的工作特性
+多模光纤耦合效率为：
+
+      = NA 2
+
+
+例:
+
+     NA = 0.24   = (0.24) = 0.0576
+                            2
+
+
+
+     L = 10 log(0.0576) = −12.4 dB
+
+L为耦合损耗.
+
+                   6.2                 41
+       LED的工作特性
+对于多模 GRIN 光纤来说耦合效率会更低，如下所示:
+
+
+            NA2
+         =
+             2
+损耗的计算方法与上页相同，多模 GRIN 光纤耦合损耗
+与普通多模光纤相比相差3 dB。
+
+          L = −15.4 dB
+
+               6.2            42
+             LED的工作特性
+边发光器件输出光束在与PN结平行的面上呈朗伯分布，
+在垂直于结的面中以较窄的波束辐射（由于结中所形成
+的波导）。
+
+
+
+ 折射率                       n
+
+                               p
+               ||
+        ⊥
+
+
+                     6.2           43
+               LED的工作特性
+
+例: || = 120, ⊥ = 30
+
+
+
+
+                      n
+                                ⊥
+
+    junction          p
+
+
+
+
+                          6.2        44
+         LED的工作特性
+  LED耦合入光纤
+  A. 具备刻蚀阱的面发射二极管
+
+
+
+                Fiber
+
+                      n
+                          Junction
+                      p
+
+
+
+
+                6.2                  45
+注意：面发射有利于阵列耦合
+         LED的工作特性
+B. 边发射二极管
+
+
+
+
+     n
+     p               Fiber
+         LED
+
+
+
+
+               6.2           46
+              LED的工作特性
+LED封装
+LED放置于热沉上
+
+                        玻璃盖板(或透镜)
+
+        LED
+                             金属壳
+
+
+          电极            热沉
+
+
+
+                  6.2               47
+          LED的工作特性
+LED封装
+玻璃盖板LED的光源-光纤耦合
+
+
+
+
+LED       Fiber         LED      Fiber
+
+A) 不加透镜                 B) 加透镜
+
+
+
+
+                  6.2                    48
+          LED的工作特性
+LED封装
+微透镜LED
+           微透镜
+                       透光盖板
+         LED
+                        金属壳
+
+
+                       热沉
+           电极
+
+
+
+                 6.2          49
+         Section 6.3
+ Laser Principles，激光器原理
+
+ = 0.633 m (red)
+HeNe氦氖激光器在光纤上的应用
+1. 连续性测试. 用于光纤损坏的目视检测
+
+              Fiber            Scattered Light
+                                         Output Light
+
+2. NA测量
+                      NA = sin 
+                                                 2
+                      Fiber
+                         6.3                            50
+            激光器原理
+  氦氖激光器
+            L
+                                        Output
+             Tube         Window        E
+           HeNe Gas
+                                             z
+
+  Mirror                       Mirror
+           Power Supply
+
+
+
+
+                    6.3                          51
+提问：密封的气体腔，为什么玻璃窗是斜置？
+               激光器原理
+能级图
+
+Wave Number 波数
+1
+                                 能量 (J)
+    (cm −1 )
+
+               He         Neon
+170,000                             Wu
+160,000                                  Wp
+150,000                             Wl
+
+
+
+
+                    6.3                       52
+              激光器原理
+  能级态在对应物体状态有所变化。其中，气体中体现为离
+  散能级，固体中体现为能带
+
+
+
+                        1
+      Wavenumber 
+                        
+                 c
+      W = hf = h  
+                 
+      1 W
+       =
+       hc
+
+                       6.3   53
+提问：光和物理间的三种相互作用？
+                  激光器原理
+Ground state 基 态 → 最低能级态.
+Excited state 激发态 → 更高的能级态.
+原子可通过以下方式被激发:
+1. Absorption of an incident photon. 光子吸收
+2. Absorption of energy in a collision with a fast
+moving particle. 粒子碰撞
+3. Absorption of energy by transfer from another
+excited atom. 其他受激原子的状态转变
+
+
+                          6.3                        54
+             激光器原理
+对于氦氖激光器:
+电源电离气体，使得自由电子向正极加速，电子获得动
+能后与氦原子碰撞，激发它们到一定能级上
+
+
+    1
+        = 167,800 cm−1
+    
+
+受激的氦原子将它们的能量转移给氖原子。
+
+
+
+                    6.3    55
+                激光器原理
+
+Ne原子现在处于激发态。He原子向下跃迁到低能级状
+态
+
+
+    1
+        = 152,000 cm−1
+    
+
+同时辐射光子。
+
+
+
+
+                         6.3   56
+                    激光器原理
+高能级
+              hc
+       Wu =
+              u
+低能级：
+              hc
+      W =
+              
+辐射光子能量:
+               hc
+       Wp =
+               p
+                      6.3   57
+                        激光器原理
+  Wp = Wu − W
+  hc       hc       hc
+       =        −
+  p       u       
+   1       1         1
+       =        −
+  p       u       
+
+输出波数 = 高能级波数 – 低能级波数
+
+   1
+       = 167,800 cm−1 − 152,000 cm−1
+  p
+
+                          6.3          58
+            激光器原理
+
+ 1
+     = 15,800 cm−1
+p
+          1
+p =           −1
+                  = 6.33  10 −5
+                                 cm
+     15,800 cm
+ p = 0.633  m
+这一波长呈现红光
+
+
+
+
+                     6.3              59
+            激光器原理
+Ne原子与光子的相互作用
+1. 一个入射波长为 0.633 m 的光子可以被存在于较低
+激光能级的氖原子吸收。
+
+ Absorption，吸收
+
+                         高能级
+ 光子
+
+                         低能级
+
+  = 吸收后的状态             =吸收前的状态
+
+                 6.3              60
+         激光器原理
+Ne原子与光子的相互作用
+2. 一个受激氖原子可以自发跃迁到较低的能级，辐射出
+一个光子。此为自发辐射，自发辐射发出荧光。自发辐射
+非相干。
+
+                       高能级
+ 光子
+
+                       低能级
+
+  = 自发辐射后的状态         = 自发辐射前的状态
+
+               6.3                61
+           激光器原理
+3. 一个入射波长为 0.633 m 的光子可以诱导一个受激
+的氖原子辐射一个光子 ，此为受激辐射，受激光子与激
+发光子同相位。
+
+                       高能级
+  光子
+
+                       低能级
+
+   = 吸收后的状态          = 吸收前的状态
+
+
+
+               6.3                62
+                  激光器原理
+可能出现情况
+A) More Ne atoms are in the lower level than in the
+higher one. An incoming stream of photons would
+be attenuated.若受激态氖原子数小于基态数，光子数衰
+减
+                                   高能级
+    光子
+
+                                   低能级
+
+    = 吸收后的状态                    = 吸收前的状态
+
+                          6.3                         63
+                激光器原理
+B) More Ne atoms in the upper level. An incoming
+stream of photons would be amplified.若激发态氖原
+子数大于基态数，光子数增加                高能级
+
+                             原光子
+                            新的光子
+                            低能级
+     = 吸收后的状态            = 吸收前的状态
+激光的产生需要第二种情况，我们称之为（粒子数反转
+）.
+
+                       6.3                         64
+             激光器原理
+激光器是一种产生高频振荡的振荡器。
+振荡器要求：
+Amplification，放大器: 氖原子
+Feedback，反馈: 谐振腔
+Tuning，调谐装置: 可跃迁能级
+
+
+
+
+                   6.3   65
+                   激光器原理
+  Laser
+  Light 光
+  Amplification by放大
+  Stimulated受激
+  Emission of 散发
+  Radiation辐射
+
+
+
+
+Joseph C. Palais       6.3   66
+         激光器原理
+激光
+由于激光的产生与谐振腔内的增益损耗相关，只有当增
+益大于损耗,激光器才会发射激光。也就是说，只有当增
+益足够高时，且谐振腔中的一个(或两个)反射镜是部分透
+射的，以允许一些光从腔中逸出才能发射激光。
+
+
+
+
+            6.3              67
+              激光器原理
+
+谐振腔距离由谐振频率所决定，式子如下：
+          c
+   fc =
+         2L
+这一式子来自于第三章中提出的谐振腔共振条件。 氦氖
+气体在0.633 m波长下1500MHz上具有增益。且由于多
+普勒频移由运动的氖原子发出的电磁波带宽并不为0。
+
+
+
+
+                6.3               68
+           激光器原理
+结论如下:
+
+                                 Gain, 增益
+        1500 MHz
+                             f
+                 c
+                           Cavity Resonances
+                2L
+                             f 谐振腔
+           f
+
+                           Output Spectrum
+                            f   输出频谱
+
+图为激光的三纵模
+
+                     6.3                       69
+                  激光器原理
+输出呈高斯光强度分布
+
+
+             w = 10 m
+
+
+         1
+  I/I0
+
+
+
+
+    0.5                        0.135
+
+
+                           r
+
+
+                         6.3           70
+                    激光器原理
+  Higher-ordered transverse modes occur if the gas
+  tube diameter is large enough. These modes are
+  analogous to the modes in the dielectric slab and in
+  the fiber。
+  如果气体管直径足够大，就会出现高阶横模。这些模式类
+  似于电介质板和光纤中的模式。
+
+
+
+
+                            6.3                          71
+联系：激光器高阶横模 vs 光纤高阶模
+           激光器原理
+  ✓ 单横模激光器只有一个横模。它具有较小的光束发散
+   度，比多模(横向)激光器更好。
+  ✓ 单纵模激光器只有一个纵模。它具有小谱宽的特点，
+   这可通过前面的多模光谱图中所存在的一个纵模得出
+
+
+
+
+              6.3             72
+理解：高阶横模为什么发散角更大？纵模间的传输延时？
+                Section 6.4（Skip）
+                激光二极管
+                    V         Junction
+                              Region
+
+~0.1 - 0.3 m
+       n                            10 m
+
+       p
+           300 m         Metal
+
+           金属条形接触激光二极管
+
+
+                    6.4                     73
+            激光二极管
+
+产生振荡需要装置:
+   1) 放大器
+   2) 调谐装置
+   3) 反馈
+
+
+
+
+              6.4   74
+                  激光二极管
+反馈
+谐振腔提供了正反馈，类似于镜子间的反射
+例: AlGaAs, n = 3.6
+
+                 2               2
+        n1 − n2      1 − 3.6 
+  R =           =            = 0.32
+        n1 + n2      1 + 3. 6 
+  32 % Reflection
+  68 % Transmissi on
+
+
+
+                           6.4              75
+               激光二极管
+放大器                           Stimulated
+  Electron      Original
+                              Photon，受激光子
+                Photon，
+  Energy，
+                初始光子           Free Electrons，
+  电子能级
+               p               自由电子
+                       -------------------
+          Wg                --------------
+
+           +++++++++
+           ++++++++++++
+             Free Holes，        n
+Hole Energy，
+             自由空穴
+空穴能级                        Incoming Photon，
+                            入射光子
+
+                正向偏置PN结
+                      6.4                        76
+          激光二极管
+  正向电流将空穴和电子注入结中。结中的光子刺激电子-
+  空穴复合，发射出附加的光子。这个过程产生收益。如
+  果增益超过损耗，就会发生振荡。因此，增益必须超过
+  某个阈值。为了得到这一阈值，我们可以调控电流大于
+  阈值电流产生振荡。
+
+
+
+
+              6.4             77
+理解：激光器阈值，光信号往返一次腔体，增益大于损耗
+           激光二极管
+
+除非存在粒子数反转(结中的自由电子-空穴对比中性原
+子多)，否则没有增益。否则，我们得到的是吸收导致的
+衰减而不是增益。
+
+
+
+
+             6.4            78
+          激光二极管
+调谐装置
+带隙决定输出波长，由（6.2）可得
+
+            1.24
+         =                (6.2)
+            Wg
+
+其中， 单位为 m 而 Wg 单位为 eV.
+
+
+
+
+                   6.4             79
+          激光二极管
+
+输出光不是单一波长而是一个波长范围。这是因为能量
+跃迁发生在能带之间（能带蕴含了很多小能级）（而不
+是像气体激光器中的离散线）。
+
+
+
+           -------------------
+     Wg        --------------
+
+    +++++++++
+    ++++++++++++
+
+
+            6.4                  80
+              激光二极管
+谐振腔也会影响输出光谱
+例： 谐振腔的谐振波长间隔计算如下：
+
+              o   2
+                                       (3.26)
+      c =            fc
+            c
+            c
+     fc =                             (3.25)
+           2Ln
+    Thus
+              2                    2
+           o c    o
+     c =       =
+            c 2Ln 2Ln
+                             6.4                81
+                   激光二极管
+不妨设:
+         0 = 0.82 m, L = 300 m, n = 3.6
+           = 2 nm (laser linewidth)
+则
+            (0.82) 2
+     c =           = 3.11  10−4  m = 0.311nm
+           2(300)3.6
+纵模数约为：
+
+              linewidth     
+    Nm                   =
+         resonance spacing  c
+
+                            6.4                    82
+            激光二极管
+
+在这里:
+
+         2 nm
+  Nm =         = 6.4  6
+       0.311nm
+
+我们计算得出存在六个纵模
+
+
+
+
+                   6.4     83
+            激光二极管
+对于激光二极管，我们有：
+                             Gain
+
+
+                                 (nm)
+  819         820         821
+     0.311 nm                Cavity
+     c                     Resonances
+                                 (nm)
+
+                             Output
+     c                     Spectrum
+                                (nm)
+                    6.4                   84
+       激光二极管
+前文计算得出激光二极管里边存在着六个棕哦
+纵向单模激光器只有一个纵模。光谱看起来如下:
+
+
+
+
+                       0.2 nm
+                                    (nm)
+         820
+
+
+               6.4                          85
+          激光二极管
+异质结
+同质结（Homojunction）：使用单一半导体形成的pn
+结。
+例如：GaAs或AlGaAs。
+
+
+异质结（Heterojunction）：使用不同半导体形成的pn
+结。
+
+
+
+
+                  6.4              86
+                  激光二极管
+Consider the following heterojunction laser diode:
+
+
+                                  电子势垒
+        AlxGa1-x As     AlyGa1-y As AlxGa1-x As
+     注入电子 - - - - - - - - - - - - - -
+               - - - - - - - - - - - - - - 1.8 eV
+                           1.55 eV
+               1.8 eV
+ Electron                     + + + + + + + + + + 注入空穴
+ Energy
+                  n     n               p
+                   空穴势垒
+
+                           6.4                           87
+               激光二极管
+能级图
+             --------------
+             - - - - - - - - - - - - - - 1.8 eV
+                         1.55 eV
+             1.8 eV
+ Electron                   ++++++++++
+ Energy
+               n               n       p
+Refractive
+Index，折射率
+
+
+           1.24 1.24
+        =     =     = 0.8  m
+            Wg 1.55
+                         6.4                      88
+           激光二极管
+从前一个幻灯片：
+1) 带隙能量的变化形成屏障，将载流子限制在活动区域内。
+
+
+2) 边界处材料的变化有源层产生电介质波导，其将光波限制
+在有源区从而产生高电流密度、高光子密度，出现强受激发
+射和高放大，使得激光振荡阈值所需的电流更少。
+
+
+3) 条状几何形状将电流限制在窄区域，从而增加电流密度
+
+
+
+             6.4              89
+                激光二极管
+大多数连续激光二极管为如下所示的异质结边缘发射
+器或VCSELs(稍后描述)。
+
+                                    Junction
+                                    Region
+
+
+         n
+~0.1 -
+0.3 m   p
+             300 m         10 m
+
+
+
+                      6.4                      90
+             Section 6.5
+Laser Diode Operating Characteristics
+        半导体激光器工作特性
+       5
+
+  P (mW)                       Ideal
+            Actual
+
+                                       I (mA)
+       0          ITH         100
+
+ ITH = threshold current，阈值电流
+ 例: ITH = 75 mA
+ 二极管电压  1.2 - 2 V
+                        6.5                     91
+                  半导体激光器工作特性
+Digital Modulation，数字调制
+                                          Optical Power
+  Optical Power
+
+                                          光功率
+                                         1 0 1
+
+                  ITH
+                        Idc                     t
+                                   is
+                               1
+                               0
+                               1
+                         t Input Current or Signal
+                            输入电流或信号
+                                   6.5                    92
+          半导体激光器工作特性
+数字调制                               i
+
+
+          Idc           is
+
+
+            Bias    Signal
+
+The dc bias, set just at (or near) threshold, makes the
+device turn on quicker for binary ones.
+直流偏置电流使数字调制时二极管快速导通
+
+
+                             6.5                      93
+                半导体激光器工作特性
+Analog Modulation，模拟调制
+                                             Optical Power 光功率
+                                            Psp
+Optical Power
+
+
+
+
+                                 Pdc
+                                                     t
+
+
+                      Idc
+                ITH                     i
+                                  Isp
+
+
+                                Input Current (Signal)，
+                                输入电流（信号）
+                            t     6.5                       94
+        半导体激光器工作特性
+模拟调制
+                            i
+
+
+       Idc            is
+
+
+          Bias   Signal
+
+The dc bias is set to operate in the middle of the
+linear region of the diode’s characteristic curve.
+直流偏置电流使始终工作在线性区域
+
+
+                           6.5                       95
+       半导体激光器工作特性
+  Temperature Dependence，温度特性
+
+
+
+         5
+    P (mW)          30°C      80°C
+
+
+
+        0      70       100     i (mA)
+
+
+
+
+               6.5                       96
+温控重要性：阈值电流 波长均为温度敏感
+    半导体激光器工作特性
+阈值电流随着温度的增加而增加。n型材料中空穴和p型材
+料中电子的热生成在有源层外部产生不必要的复合。
+这些不必要的复合会降低增益从而增加阈值电流最终降低
+输出功率。
+总而言之，温度上升将导致半导体激光器输出功率降低。
+
+
+
+
+            6.5           97
+    半导体激光器工作特性
+半导体激光器的输出波长随温度的变化而变化。因为二
+极管材料的折射率与温度有关，因此，谐振腔的谐振频
+率会随温度的变化而变化。
+谐振腔谐振频率计算公式如下:
+
+            mc
+        f =             (3.24)
+            2Ln
+
+折射率温度相关，故温度特性将导致输出波长偏移
+
+
+                  6.5            98
+       半导体激光器工作特性
+
+例: 当波长偏移系数 = 0.1 nm/oC
+                         增益曲线
+
+
+ T1 = 27 °C              谐振
+
+                         输出
+
+ T2 = 30 °C              谐振
+
+                         输出
+
+                  6.5           99
+      半导体激光器工作特性
+Laser Diode Bandwidth，半导体激光器线宽
+激光二极管比LED响应更快，
+原因：载流子寿命(决定LED速度)比受激发射引起的复合时
+延(决定LD速度)长得多，故半导体激光器响应速度更快
+通常情况下半导体激光器的上升时间: 0.1 - 1ns
+
+
+
+
+                  6.5            100
+       半导体激光器工作特性
+
+带宽：
+       f3-dB = 0.35/tr
+
+例:令 tr = 0.1 ns
+                  0.35
+       f3− dB =          −9
+                            = 3.5  109
+                                        Hz
+                0.1  10
+        f3− dB = 3.5 GHz
+
+半导体激光器中的光可以用超过40 GHz (40 Gb/s)
+的速率调制。
+
+                             6.5             101
+      半导体激光器工作特性
+
+Spectral Width，线宽
+多纵模激光二极管:
+      通常为 1 to 5 nm
+单纵模激光二极管:
+      通常为 0.1 to 0.2 nm
+
+
+
+
+                    6.5     102
+         半导体激光器工作特性
+
+
+
+
+              6.5     103
+产品指标实例
+       半导体激光器工作特性
+Radiation Pattern，辐射图案
+                7 m
+
+
+
+                                 0.2 m
+                            ⊥
+                ||
+
+
+半功率光束宽度
+|| = 10 平行
+⊥ = 35 垂直
+                      6.5                 104
+         半导体激光器工作特性
+由式（2.17）可得，高斯光束发散角为：
+
+
+                    2
+                 =                              (2.17)
+                    w
+In general, the smaller the spot size, the larger the
+beam divergence.
+一般而言，光斑越小，光束发散角越大。
+
+
+
+
+                           6.5                          105
+         半导体激光器工作特性
+  Laser Diode Package，封装
+
+                         Contact 接触器
+             Threaded 隔离层
+                                  LD
+  Diode
+  Terminal
+  电极
+                                     Window 透光窗
+
+
+
+      Ground 地
+
+                            Cap 外壳
+
+                      6.5                  106
+封装：重要关键环节
+        半导体激光器工作特性
+Laser Diode With Integral Fiber Pigtail，带集成尾纤的LD
+
+
+                          Contact 接触器
+               Threaded 隔离层
+                                   LD
+ Diode
+ Terminal 电极
+
+
+                                       Fiber Pigtail
+                                       尾纤
+      Ground 地
+                                     Grooved
+                                     Block 带槽块
+                            Cap 外壳
+                      6.5                      107
+          半导体激光器工作特性
+A laser diode with an integral power monitor and
+fiber pigtail is illustrated on the next slide.
+带集成尾纤与功率监控的半导体激光器(下一页)
+
+
+
+
+                            6.5                    108
+          半导体激光器工作特性
+
+               Ground 地     Photodetector 光探测器
+
+
+
+          LD
+
+Grooved
+Block                                Diode Terminal
+槽块                                   激光器电极
+                                  Insulated
+                                  Standoff
+                                  绝缘支架
+                            Silicon
+          Fiber 光纤          Substrate
+                      6.5
+                            硅衬底               109
+        半导体激光器工作特性
+Fourteen-Pin Dual In-Line Laser Package
+14脚双列直插式激光器
+
+14 Electrical
+Pin Connections
+14针接连电极
+
+
+                                      Mounting
+                                      Bracket
+                                      安装支架
+
+
+             Fiber
+             光纤         6.5                      110
+          Section 6.6
+Narrow-Spectral-Width and Tunable
+         Laser Diodes
+    窄谱宽与可调谐半导体激光器
+这一部分，我们讨论的是distributed feedback laser
+diode，分布反馈式半导体激光器 (DFB), 它可以产生窄线
+宽和 tunable laser diode，可调谐半导体激光器,可以增加
+系统的灵活度。
+
+
+
+
+                   6.6                  111
+   6.6.1 Distributed Feedback Laser Diode
+   分布反馈式半导体激光器
+   研制DFB可以应用于单纵模激光二极管。
+                                       Metallization 金属层
+                          
+     Different                                 Grating 光栅
+     Materials
+                   p
+                                                   Active Layer
+Cleaved Facet      n
+                                                   有源层
+
+
+   The grating acts as a filter, permitting only one of the
+   cavity’s modes to propagate.
+   光栅作用类似于滤波器，与镜面空腔仅有一个谐振波长相同
+                              6.6                         112
+分布反馈式半导体激光器
+
+            Laser Gain 激光增益
+                 
+            Cavity Resonances
+            谐振腔光谱
+                  
+            Grating Resonances
+            光栅光谱
+               
+            Laser Output 激光输出
+                 
+ 0
+      6.6                        113
+        分布反馈式半导体激光器
+  由布拉格定律可得，光栅周期 为半波长的整数倍，光栅
+  周期所求式如下 :
+
+          m
+       =                       (6.10)
+           2
+
+   ：激光器介质所测波长, m 为整数
+
+             0         volume Bragg grating
+
+       =
+             n
+
+  0 ：真空波长
+                          Bragg diffraction
+                  6.6                    114
+中枢知识点：干涉-（调制、滤波器、谐振、模式）
+     分布反馈式半导体激光器
+
+光栅周期满足下式：
+         0          (6.11)
+    = m 
+         2n 
+
+
+真空中的振荡波长所求式如下所示：
+
+        2n
+   0 =
+         m
+
+
+
+                 6.6            115
+        分布反馈式半导体激光器
+以 InGaAsP DFB LD 为例：
+    0 = 1.55 m, n = 3.5, 令 m = 1 (第一级衍射)
+光栅周期为：
+
+          m 0    1.55
+       =      =        = 0.22  m
+           2n    2(3.5)
+
+令 m = 2 (第二级衍射)
+
+        m 0 2(1.55)
+     =     =        = 0.44  m
+         2n   2(3.5)
+
+
+                      6.6                    116
+6.6.2 Tunable Laser Diodes，可调谐半导体激光器
+波分复用WDM光通信系统中需要调谐到精确波长的光源
+。(ITU 国际电联规定的波长位置，间隔50/100GHz)
+
+WDM（波分复用）系统，波长等间距的多个光载波，经
+独立数字调制后波分复用在一根光纤传输，在接收端经波
+长解复用后各个载波信号进行独立接收。
+
+围绕WDM应用需求，产生可调谐激光器需求；
+
+其中一种设想是通过改变DFB LD的温度或其驱动电流(驱
+动电流可以改变其温度)来调谐工作波长。调谐范围为10-
+2nm/mA。
+                 6.6               117
+            可调谐半导体激光器
+例如，当驱动电流改变10mA时候可调谐0.1nm的工作波长。
+该过程仅产生十分之几纳米的调谐范围(可能从1550.1到
+1550.3纳米)。我们需要10 nm甚至更大的范围内的可调谐性
+，以便用于WDM系统。
+
+为了得到更大范围的可调谐性，我们将介绍 distributed
+Bragg reflector laser diode/分布布拉格反射式激光器DBR
+
+
+
+
+                    6.6                  118
+Distributed Bragg Reflector Laser Diode
+分布布拉格反射式激光器
+          IG       IP     IB
+
+
+
+
+                                CLEAVED
+                                FACET
+     p
+
+
+                有源区
+     n
+
+
+
+
+         GAIN   PHASE   BRAGG
+
+
+
+
+如图所示，增益区、相位区和布拉格区是分开的。其中，
+有源区是蓝色的。这些区域具有独立的驱动电流
+
+                        6.6               119
+         可调谐激光二极管
+• 增益电流IG: 决定了有源层中的放大倍数，与传统的激
+ 光二极管一致。
+
+• 相电流 IP: 通过加热改变相位层的折射率来控制从布拉
+ 格区域反射波的相位。
+
+• 布拉格电流 IB:通过改变布拉格区域的温度(从而改变折射
+ 率)来控制光栅周期(L)。该周期决定了该区域的谐振频率
+ ，从而决定了激光器的工作波长。
+
+ 由式(6-11)可得，工作波长为： 0 = 2neff 
+                  6.6             120
+           可调谐激光二极管
+令共振阶数 m=1, 0 为真空工作波长, neff 为有效折射率。则
+调谐范围 () 与有效折射率 (neff)成比例。关系式如下
+
+                    neff
+                  =
+                      neff
+一般而言，调谐范围为中心波长的1%，即：
+
+              = 0.01
+
+若中心波长为 1500 nm, 则调谐范围为 15 nm。
+
+                      6.6           121
+          可调谐激光二极管
+若中心波长为 1500 nm, 则调谐范围为 30 nm。若WDM的相
+邻通道系统间隔为 0.4 nm, 则系统通道数N为：
+         N = 30/0.4 = 75 channels
+
+
+
+
+                   6.6              122
+           Phase Noise model相位噪声模型
+            narrow linewidth laser source
+                     窄线宽激光源
+       假设输出强度恒定, 则光电场计算如下:
+
+
+
+
+       E0：光电场幅值（假设恒定）
+       φn(t)：相位噪声函数
+                                               6.3                   123
+Digital Coherent Optical Systems Architecture and algorithm p29-30
+        Phase Noise 相位噪声
+激光器的非零线宽引起相位噪声过程，该过程由连续时间
+维纳过程(continuous-time Wiener process)建模
+
+
+
+
+（瞬时频率引起的相位变化方差）
+
+
+                    6.3                  124
+    Phase Noise 相位噪声
+
+
+
+
+洛伦兹谱建模如下：
+
+                      𝜎𝑛2𝜙
+      𝑆𝑙 (𝑓) =
+                 1 4
+                   𝜎𝑛𝜙 + (2𝜋𝑓)2
+                 4
+
+
+
+
+                    6.3           125
+   Phase Noise 相位噪声
+当线宽为 100kHz 时, 所得洛伦兹谱如图所示：
+
+
+
+
+            6.3              126
+          Phase Noise 相位噪声
+
+  洛伦兹谱半波全宽（FWHM)计算如下:
+                     𝜎𝑛2𝜙                        𝜎𝑛2𝜙
+              Δ𝑣 =                𝑆𝑙 (𝑓) =
+                                             1 4
+                     2𝜋                       𝜎 + (2𝜋𝑓)2
+                                             4 𝑛𝜙
+
+ 因此相位差的方差为:                                             2𝜋Δ𝜐|𝜏|
+
+  最终可得:    𝜙𝑛 𝑡 − 𝜙𝑛 𝑡 − 𝜏 ~𝑁(0,2𝜋Δ𝜐|𝜏|)
+
+
+
+
+                            6.3                               127
+激光器线宽，产品指标可测
+     Phase Noise 相位噪声
+16QAM信号添加随机相位噪声将导致星座图旋转。
+
+
+
+
+接收端需要载波相位恢复/相位噪声估计
+            6.3            128
+   Section 6.7
+
+
+
+Optical Amplifiers
+    光放大器
+
+
+
+
+        6.7          129
+长距离光纤链路的设计(比方说> 50公里)需要中继器或放大器
+来提高功率。
+具有中继器的系统，光电中继器:
+
+
+
+         Fiber           Fiber            Fiber
+
+
+
+Transmitter   Repeater         Repeater       Receiver
+ 发送机             中继器             中继器              接收机
+
+
+
+                         6.7                            130
+The repeater detects the digital optical signal, determines
+the presence of 0’s and 1’s and then regenerates the
+optical signal.
+中继器可检测并重新生成0/1码
+例:
+         TAT - 8 Transatlantic fiber cable（跨大西洋光缆）
+(1988)
+         链路长度 ~ 5600 km
+         中继器数 ~ 130
+         最大间距 ~ 50 km
+
+                            6.7                        131
+中继器特性:
+ •Costly                        昂贵(单波工作)
+ •Require large power supply    供电(光-电/电-光)
+ •Difficult to maintain         难以维护
+ •Digital only                  仅支持数字系统
+
+
+光放大器可以解决了这里的大部分问题。
+我们如何建立一个光放大器？
+所有激光器都包含光放大器。
+光导体LD本身是一种可能的光学放大器。
+
+                          6.7                 132
+6.7.1 Semiconductor Optical Amplifier 半导体光放大器
+
+                      V
+消反射涂层                             消反射涂层
+
+
+         P
+
+ 输入光纤                                  输出光纤
+         n
+
+                               活性层
+
+
+
+                      6.7                   133
+Problems:
+   1. Low gain 增益低
+   2. High noise 噪声大
+   3. Polarization dependent gain 增益与偏振方向相关
+   4. Low coupling efficiency to the fiber 耦合效率低
+   5. Pattern dependent effect 码型效应(可支持信号调制
+   速率不够高)
+
+
+掺铒光纤放大器 (Erbium-doped-fiber amplifier/EDFA)。
+具体内容在下一页介绍。
+
+                        6.7                        134
+6.7.2 Erbium-Doped Fiber Optical Amplifier（EDFA)
+                 掺铒光纤放大器
+
+
+数字信号           Fiber              Fiber
+                        G
+
+   Transmitter 发送机      EDFA                Receiver
+                                             接收机
+模拟信号
+
+
+
+数字信号显示在图的顶部，模拟信号显示在图的底部。
+EDFA放大器较为实用
+                          6.7                      135
+EDFA 组件
+材料 : Erbium-doped fiber（掺饵光纤）.
+Erbium（饵）: 一种稀土原子。它是活性物质。
+二氧化硅: 主体材料(光纤).
+铒吸收光谱特性如下一页PPT所示：
+
+
+
+
+                   6.7           136
+Erbium Absorption Spectrum（铒吸收光谱）
+
+                             20 nm
+
+
+  980          1480           1550       (nm)
+Pump泵浦带       Pump          Amplification 放大带
+
+
+
+
+ Non-radiative transitions，非辐射跃迁
+
+
+
+                      6.7                  137
+  下一页PPT展示了从4I13/2 能级到基态能级的强辐射跃迁
+  。能级寿命较长（约为10ms）， 辐射波长约为1550nm
+  (谱宽为 20 - 30 nm )。
+  材料在980纳米和1480纳米处 存在强吸收 峰，可以将铒
+  原子泵浦到更高的能级。
+
+
+
+
+                       6.7         138
+重要：能级寿命较长的优点，调制速率不敏感
+ Erbium-Doped-Fiber Energy-Level Diagram
+ 掺饵光纤（EDF）能级图
+
+                             Fast transitions快速跃迁
+         High energy level
+
+Energy    高能级                      Upper laser level
+                                   较高能级          4I
+能量        1.48 m or                               13/2
+
+          0.98 m
+                                           1.55 m
+          泵浦光子
+                                           发射光子
+            Ground state                        4I15/2
+            基态
+
+                             6.7                          139
+放大过程
+泵浦光子(1.48 mm或0.98 mm)被吸收，将Er原子激发到
+高能级。原子衰落（非辐射）跃迁到激光上能级。这个
+能级有很长的寿命，所以原子会保持在那个状态直到入
+射的光子(在1.55um范围内)激发原子跃迁到基态。
+受激跃迁 可 以 产生与受激光子波长和相位相同的光子 从
+而实现放大。
+
+
+
+
+               6.7              140
+EDFA的关键特性:
+1. The gain is at the wavelength range where fiber loss
+is a minimum. Low loss fibers combined with EDFAs
+yield link lengths of thousands of kilometers.
+Example: L = 10,000 km 1550nm 工作在低光损窗口
+2. High gains are available (15 dB or more).大增益
+3. Pump band diodes are available.存在合适的泵浦源
+4. Ease of insertion into a fiber link. That is, low
+coupling losses to the transmission fiber. 易于插入
+5. High output power (10 to 50 mW). (2Wcontinued)
+                                            高输出功率
+                             6.7                       141
+6. Low drive powers.                    驱动功率低
+Example: 400 mA, 2 volts, 0.8 watts.
+7. Wide bandwidth (20 to 30 nm).        宽带工作范围
+8. Amplifier works for digital and analog systems.
+                           同时支持数字与模拟系统
+9. Multiple channels (WDM) can be amplified
+simultaneously.            WDM系统可同时被放大
+10. Amplifier is insensitive to bit rate and
+modulation format.
+              对比特率、调制格式不敏感
+
+                           6.7                       142
+EDFA 示意图 (基本情况)                 Erbium doped
+                                fiber loop掺饵光纤环
+
+
+                 WM
+ Input signal             1.55 m          1.55 m
+ 1.55 m                  1.48 m     Output signal
+ 输入信号                                  输出信号
+
+                 LD
+                1.48 m
+光纤长度: 10 - 20 m
+WM: 波分复用器
+
+
+                          6.7                     143
+   EDFA 示意图 (实际情况下)
+
+   Input                      Er-doped               Output
+   1.55 m                    fiber                  1.55 m
+                         1.55     1.55
+
+                    WM                    WM
+                         1.48      1.48
+    Isolator                                      Isolator
+               LD                                LD
+             1.48 m                           1.48 m
+
+   Pumping in both directions increases the total gain.
+   泵浦光可从两端同时输入来增加总增益
+
+                             6.7                             144
+提问：Isolator 隔离器的作用？
+Isolators keep the amplifier from going into
+oscillation.
+隔离器可抑制放大器振荡，
+
+
+
+
+                         6.7                   145
+6.7.3 Erbium-Doped Waveguide Optical Amplifier
+      掺铒波导光放大器，EDWA (自学)
+
+This is an erbium-doped amplifier built in integrated
+optic form. An erbium-doped waveguide replaces
+the erbium-doped fiber in an EDFA as the amplifying
+medium.
+
+掺铒波导可代替EDFA中的掺铒光纤作为放大介质。
+
+
+
+
+                         6.7                            146
+Erbium-Doped Waveguide Amplifier (EDWA)
+           掺铒波导放大器
+                                   OUTPUT
+      INPUT
+                WDM          EDW   SIGNAL
+      SIGNAL
+
+
+           LD
+
+
+                      (a)
+
+WDM:波分多路复用器
+
+EDW: 掺铒集成光波导
+
+LD: 激光二极管
+
+
+
+                            6.7             147
+EDWA With Integrated Multiplexer
+集成了EDWA的复用器
+
+
+                       EDWA
+
+      INPUT
+      SIGNAL                        OUTPUT
+                 WDM          EDW   SIGNAL
+
+
+
+
+           LD    INTEGRATED WDM AND EDW
+                        (b)
+
+
+
+                集成泵浦放大器
+
+
+
+                          6.7                148
+EDWA Array With Integrated Multiplexer and Splitter
+（集成复用器和分路器的EDWA阵列）
+
+                          EDWA ARRAY
+      INPUT
+     SIGNAL                                  OUTPUT
+        1                     WDM      EDW   SIGNAL
+                                                1
+
+
+      PUMP     PS
+     （泵浦）
+
+      INPUT                                  OUTPUT
+                              WDM      EDW
+     SIGNAL                                  SIGNAL
+        2                                       2
+
+
+                    (c)
+                    集成泵浦放大器阵列
+
+
+                              6.7                     149
+6.7.4 Raman Amplifier，拉曼放大器
+
+此放大器是基于受激拉曼散射原理 (Raman Scattering)。这是
+光子被光学声子散射的过程。所谓声子就是晶体或分子的振动。
+这种散射是非弹性的，光子失去能量并以较低的频率出现。这
+个频率下移被称为斯托克斯频移（ Stokes shift ）。在二氧化
+硅光纤中的频移量为13.2 THz。
+
+
+
+
+                     6.7          150
+           Raman Scattering，拉曼散射
+          VIRTUAL STATE，虚态
+                               W3
+
+
+                        hf32
+   hf13
+
+
+
+                               W2
+                   OPTICAL PHONON，光学声子
+                               W1
+          GROUND STATE，基态
+
+hf13 为输入光子能量。
+hf32 为输出光子能量。
+(W2 – W1) 为声子能量。
+声子频率为: (W2 – W1)/h = 13.2 THz
+                               6.7       151
+        Raman Scattering，拉曼散射
+
+例: 输入波长(in) 为1450 nm。求拉曼散射的声子频率和
+相应的波长改变量。
+解答：根据能级图我们可以得出：
+   hf13-hf32 = hfphonon
+   hfin-hfout = hfphonon
+   fout = fin - fphonon
+
+
+
+
+                           6.7      152
+          Raman Scattering，散射
+
+           c         c
+                 =         − 13.2  1012
+          out       in
+
+令in = 1450 nm 得到输出波长：
+    out = 1549 nm
+波长改变量为99 nm。
+
+
+
+
+                              6.7          153
+      Raman Scattering，拉曼散射
+
+
+频移不仅仅是13.2 THz，还占据了该值周围约6 THz的范围。
+
+拉曼散射约有6THz的带宽
+
+
+
+为了解释这一点，我们可以将W2能级绘制为一个带，如下
+一张幻灯片所示。
+
+
+
+
+                6.7           154
+       Raman Scattering，拉曼散射
+
+       VIRTUAL STATE（虚态）
+                           W3
+
+                    hf32
+hf13
+
+
+
+                           W2
+                                      能级 → 单一频移×
+               OPTICAL PHONON         能带 → 带  宽√
+               （声子）      W1
+       GROUND STATE
+       （基态）
+
+
+
+
+                                6.7                155
+Stimulated Raman Scattering，受激拉曼散射
+
+当存在两束光束时，拉曼散射可以被激发。一束光是泵浦
+光，另一束是信号光。与我们之前讨论的光放大器类似，
+泵浦提供能量来放大信号。这在下一张能级图中以示意图
+形式显示。
+
+
+
+
+                6.7                  156
+       Stimulated Raman Scattering，受激拉曼散射
+
+              VIRTUAL STATE，虚态
+                                   W3
+
+                 hf32       hf32
+PUMP   hf13   SIGNAL
+泵浦光           信号光
+
+                                   W2
+                        OPTICAL PHONON，光学声子
+
+                                   W1
+              GROUND STATE，基态
+
+
+
+
+                                        6.7   157
+  Stimulated Raman Scattering，受激拉曼散射
+
+泵浦光子将分子提升到上方的虚态W3。信号光子刺激分
+子跃迁到能级W2，发射一个与自身频率和相位相同的光
+子。因此，我们就像之前所见到的那样实现了放大。然而，
+有两个主要的不同之处。
+过程有些类似EDFA的受激辐射，区别为：
+
+
+
+
+                  6.7                  158
+             Raman Amplifier，拉曼放大器
+1. In this amplifier, population inversion is not required.
+   不需粒子数反转
+2. The wavelength of amplification is determined by the
+   pump wavelength together with the vibrational
+   frequency of the glass molecules, not by the material’s
+   allowed energy levels.
+   放大波长由泵浦源波长决定，而不是由材料允许的能级决定。
+   我们得出结论，只要有合适波长的泵浦光源，我们就可以在
+任何期望的波长上进行放大。
+
+                             6.7                         159
+     Raman Amplifier，拉曼放大器
+
+拉曼放大器可用于S波段、C波段和L波段。
+回忆之前的波段表：
+
+波段            波长
+S             1460-1530 nm
+C             1530-1565 nm
+L             1565-1625 nm
+
+
+
+
+              6.7            160
+ Stimulated Raman Amplifier，受激拉曼放大器
+
+以下是拉曼放大器的示意图：
+
+                  OPTICAL FIBER
+           ISOLATOR                     ISOLATOR
+           光隔离器                         光隔离器
+  INPUT
+                                                   OUTPUT
+  SIGNAL                        WDM
+                                                   SIGNAL
+
+
+
+                   PUMP LASER
+                                  反向泵浦可防止泵
+                                  浦光进入接收机
+
+
+由于采用拉曼散射，放大器具有6 THz的带宽。
+
+
+
+
+                                  6.7                       161
+Stimulated Raman Amplifier，受激拉曼放大器
+
+示例: 我们发现，对于泵浦波长为1450nm，放大将在
+ 中心波长为1549nm处进行。在这种情况下，计算
+ 放大带宽（以nm为单位）。
+解决方案：我们先前证明了
+
+   f
+   =
+     f
+我们可以得到：
+
+
+
+
+                6.7                  162
+ Stimulated Raman Amplifier，受激拉曼放大器
+
+        f    f
+  =     =
+         f    c/
+
+  =  f / c
+        2
+
+
+使用6 THz作为Δf（频率带宽），以及1549nm作为λ
+（波长），得到一个带宽为48nm。增益范围从1525
+到1573nm。请注意，这覆盖了整个C波段。
+
+
+
+                    6.7               163
+ 6.7.5 Noise Figure，噪声系数
+
+ 任何放大器不仅会放大信号，还会放大噪声。
+
+ 在理想的放大器中，两者都以相同的因子增加。在这种情况
+ 下，放大器输出处的信噪比与其输入处相同。
+
+ 真实的放大器会产生附加噪声，因此输出处的信噪比小于输
+ 入处。放大器会使信号受损。噪声指数 F 是衡量这种质量
+ 恶化的指标。
+
+
+
+
+                      6.7   164
+工程师必备技能：处理微弱信号
+      Noise Figure，噪声系数
+噪声系数由下给出:
+
+
+           ( S / N )in
+        F=                (6-12)
+           ( S / N )out
+噪声系数通常以分贝的形式给出。
+
+因此：
+
+      FdB = 10log10 F
+
+                   6.7             165
+                          Noise Figure，噪声系数
+
+     对于实际中大多数的增益值G，放大器的噪声指数 F 可以简
+     化为与放大器自发辐射因子 nsp 相关的简单表达式。
+
+                                                1  1
+                             𝐹 = 2𝑛𝑠𝑝        1−   + ≈ 2𝑛𝑠𝑝
+                                                𝐺  𝐺
+                                           𝑁2
+                                   𝑛𝑠𝑝 =
+                                         𝑁2 − 𝑁1
+
+
+       其中 N1 和 N2 分别表示基态和激发态的粒子数
+
+                                                  6.7                     166
+Fiber-Optic Communication Systems - 2021 – Agrawal P243 noise figure 推导
+              Noise Figure，噪声系数
+
+我们可建立输入和输出的信噪比以及以分贝为单位表示的噪
+声系数之间的关系。从（6.12），我们可以得到。
+
+
+             ( S / N )in
+ log F = log              = log ( S / N )in − log ( S / N )out
+             ( S / N )out
+ (S / N )out ,dB = (S / N )in,dB − FdB
+
+
+
+                               6.7                               167
+    Noise Figure，噪声系数
+
+我们得出结论，当所有这些值都以分贝为单位表示
+时，输出信噪比等于输入信噪比减去噪声系数。
+
+
+
+
+            6.7          168
+        Noise Figure，噪声系数
+级联EDFA系统的噪声系数:
+         EDFA-1              EDFA-2
+SNRi                                    SNRo
+          F1,G1              F2,G2
+
+系统的等效噪声系数的表达式为:
+                     𝐹2 − 1 𝐹3 − 1
+       𝐹𝑇𝑜𝑡𝑎𝑙 = 𝐹1 +       +       +⋯
+                       𝐺1    𝐺1 𝐺2
+总噪声系数主要取决于第一级的噪声系数。
+
+
+
+                       6.7                     169
+       Noise Figure，噪声系数
+
+SNRi                         SNRo
+       F1,G1         F2,G2
+
+
+要想获得增益高且噪声指数低的单个放大器是困难的。
+然而，通过设计每个部分的噪声指数和增益，我们可以
+实现级联放大器系统，具有低噪声指数和高系统增益。
+
+
+
+
+               6.7                  170
+                               电学系统NF(补充)
+
+
+
+
+                                                6.7       171
+https://handsonrf.com/noise-figure-basics-single-stage/
+6.7   172
+6.7   173
+接收机灵敏度
+
+
+
+
+         6.7   174
+6.7   175
+电学系统NF(补充资料)
+
+
+
+
+     6.7       176
+电学系统NF(补充资料)
+
+
+
+
+     6.7       177
+电学系统NF(补充资料)
+
+
+
+
+     6.7       178
+  6.7.6 Optical Amplifier Applications，光放大器的应用
+   光放大器在链路中的位置
+   •Launch Amplifier（发射放大器）
+   •Inline Amplifier（在线放大器）
+   •Preamplifier（前置放大器）
+                    光纤             光纤
+
+
+    TxT    A                            A        Rx
+                         A
+
+
+               LAUNCH     INLINE        PREAMP
+  功率电平         发射放大器     在线放大器          前置放大器
+
+
+
+
+                             6.7                      179
+思考：两种放大装置的区别，EDFA+SMF vs SMF+EDFA
+                         Noise Figure，噪声系数
+      ASE噪声通常被建模为加性高斯白噪声（AWGN）。
+      在光纤系统中，噪声累积的典型衡量标准是光信噪比
+      （OSNR）。
+                               𝑃signal    𝑃signal
+                        OSNR =         =            ,             0.1nm/
+                                𝑃ASE     2𝐺ASE 𝐵ref
+                                                                  12.5GHz
+
+     其中，GASE表示ASE噪声的单偏振功率谱密度，Bref表示参考
+     带宽。
+
+
+
+光信噪比定义：参考带宽                                    6.7                      180
+Digital Coherent Optical Systems Architecture and algorithm p67
+           OSNR of the Fiber Link，链路的光信噪比
+
+        由EDFA补偿的单个跨段Ls的损耗，𝑮𝑺𝑺
+                           𝑨𝑺𝑬 的公式为：
+
+
+
+                              𝑆𝑆
+                             𝐺ASE = 𝑒 𝛼𝐿𝑠 − 1 ℎ𝑣𝑠 𝑛𝑠𝑝
+
+
+        其中 h 是普朗克常数，vs 是光频率。功率衰减因子 a
+        必须用 Np/km 表示。（Np:奈培，定义与dB类似，使
+        用自然对数而非常用对数）
+
+
+
+                                               6.7                   181
+Digital Coherent Optical Systems Architecture and algorithm p29-30
+   OSNR of the Fiber Link/链路的光信噪比
+
+
+           𝑃signal              𝑃signal
+OSNR =        𝑆𝑆      =
+         2𝑁𝑠 𝐺ASE 𝐵ref 2𝑁𝑠 𝑒 𝛼𝐿𝑠 − 1 ℎ𝑣𝑠 𝑛𝑠𝑝 𝐵ref
+           𝑃signal                1    1 2𝑛𝑠𝑝 𝐺 − 1
+OSNR =               𝐹 = 2𝑛𝑠𝑝 1 −    + ≈
+                                  𝐺    𝐺      𝐺
+       𝑁𝑠 𝐹𝐺ℎ𝑣𝑠 𝐵ref
+                             2𝑛𝑠𝑝 𝐺 − 1 = 𝐹𝐺
+
+𝑣𝑠 =193THz, 𝐵ref =12.5e9Hz, h=6.626x10-34
+
+推导 OSNR(dB)表达式：G(dB) F(dB) Psignal(dBm) Ns
+
+                       6.7                          182
+OSNR of the Fiber Link，链路的光信噪比
+
+
+
+
+       OSNR vs. 传输距离曲线
+
+
+
+
+              6.7                183
+    OSNR of the Fiber Link，链路的光信噪比
+
+                       𝑃signal    𝑃signal
+回忆前面提到公式:       OSNR =         =
+                        𝑃ASE     2𝐺ASE 𝐵ref
+
+根据 SNR的定义(单偏振情形):
+
+      𝐸𝑠  𝑃𝑠𝑖𝑔𝑛𝑎𝑙 2𝐵𝑟𝑒𝑓 𝑃𝑠𝑖𝑔𝑛𝑎𝑙  2𝐵𝑟𝑒𝑓
+SNR = 𝑁 = 𝐺 𝑅 = 𝑅 𝑃             = 𝑅 OSNR
+       0   ASE 𝑠    𝑠     𝐴𝑆𝐸      𝑠
+
+
+对双偏振信号，SNR与OSNR的关系为
+                 𝐵𝑟𝑒𝑓
+           SNR = 𝑅 OSNR
+                    𝑠
+
+                   6.7                        184
+光信噪比（OSNR）与信噪比（SNR）之间的关联
+
+    28Gbaud的双偏振信号的BER-OSNR曲线
+
+
+
+
+              6.7              185
+光信噪比（OSNR）与信噪比（SNR）之间的关联
+
+
+
+
+        BER vs. 传输距离曲线
+
+
+
+
+            6.7            186
+           Section 6.8
+ Fiber Lasers光纤激光器(自学浏览)
+激光二极管和发光二极管(LED)进入玻璃光纤的耦合效
+率较低。
+如果我们能够以光纤的形式构建激光器，耦合效率将会
+更好。
+我们知道光纤放大器是可能的，因此光纤振荡器（即激
+光器）应该也是可能的。
+下面的幻灯片中展示了两种光纤激光器。
+
+
+
+
+             6.8             187
+        Fabry-Perot Fiber Laser
+        法布里-珀罗激光器
+                    Mirrors
+                                  1.55 m
+
+
+                  Erbium-Doped    Transmission Fiber
+Pump Laser Diode
+                   Silica Fiber        传输光纤
+ 泵浦源激光二极管
+                 掺铒二氧化硅光纤
+    0.98 m
+  (or 1.48 m)
+
+   镜面在1.55 m处部分反射，并在泵浦波长处透射。
+
+
+
+                         6.8                  188
+      Erbium Doped Fiber Laser
+           掺铒光纤激光器
+                          ERBIUM-DOPED
+                           FIBER LOOP
+                            掺铒光纤环
+GRATING 光栅                               GRATING
+                                                   OUTPUT
+                WDM                                SIGNAL
+                                                   光信号
+                                                   1550 nm
+
+
+       980 nm         PUMP LASER
+                       激光泵浦源
+
+
+
+
+    GRATING: Fiber Bragg grating ，光纤布拉格光栅
+    WDM: Wavelength division multiplexer，
+             波分复用器
+                                   6.7                       189
+     Erbium Doped Fiber Laser
+          掺铒光纤激光器
+• 光纤布拉格光栅（FBG）充当反射器。在第9章中有
+ 描述。
+
+• 波分复用器（Wavelength Division Multiplexer，
+ WDM）将泵浦光耦合到掺铒光纤环中。WDM也在第9
+ 章中有描述。
+
+
+
+
+                    6.7                    190
+   Erbium Doped Fiber Laser
+        掺铒光纤激光器
+• 光纤本身就是光放大器。
+
+• 光栅能提供反馈。
+
+• 有激光二极管作为泵浦源
+
+• 光纤激光器能够与传输光纤实现简单地拼接。
+
+
+
+
+              6.7             191
+               Section 6.9
+Vertical-Cavity Surface Emitting Laser Diode
+   (垂直腔面发射激光器，VCSEL)自学浏览
+
+ • VCSEL是面发射激光二极管，与传统的边发射激光二极管形
+  成对比。
+
+ • 输出的激光束为圆形，与光纤形状吻合，耦合效率高。
+
+ • VCSELs可以在单个衬底上构建成二维阵列。
+
+
+
+
+                    6.7                192
+垂直腔面发射激光器（VCSEL）
+
+       Output
+                 Reflective
+                 Layer（反射器）
+
+   p
+                    Active Region
+                    （有源区）
+   n
+
+
+
+
+           6.9             193
+ 垂直腔面发射激光器（VCSEL）
+VCSEL阵列中的二极管可以在略微不同的波长下运行
+。在波分复用（Wavelength-Division Multiplexed，
+WDM）系统中这是很有用的，可以在单根光纤上传输
+多个波长。波分复用系统在第9章中有描述。
+
+
+
+
+                  6.7                194
+ 垂直腔面发射激光器（VCSEL）
+
+• VCSEL构成的二极管成本更低。
+
+• VCSEL几何形状产生更好的光纤耦合效率。
+
+
+
+
+             6.7          195
+          Section 6.10
+           总结与讨论
+LEDs
+  •结构和特性
+
+Laser Diodes
+  •结构和特性 (相位噪声建模)
+
+Optical Amplifiers（光放大器）
+  •Semiconductor(半导体)
+  •Erbium doped，掺铒光放大器
+  •拉曼放大器
+
+                6.10       196
+噪声
+ •噪声指数 Noise Figure 适用光和电系统
+     • 电学：热噪声，温度依赖，KTB
+     • 光学：自发辐射噪声 单/双偏振
+
+ •级联噪声指数
+     • 电学：普适公式
+     • 光学：级联EDFA/后续推导更普适公式(噪声和探测)
+
+ •OSNR：光信噪比
+     • 定义：给定带宽0.1nm的噪声功率
+     • OSNR 与 通信原理的信噪比的关系式
+     • 链路OSNR公式
+     • BER vs OSNR的关系（灵敏度章节）
+                  6.10              197
+
